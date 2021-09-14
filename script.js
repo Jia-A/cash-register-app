@@ -19,7 +19,7 @@ buttonCheck.addEventListener("click", function valueValidation(){
         showMessage("Invalid input");
     }
 });
-function showMessage(message){
+function showMessage(messageShown){
     message.style.display = "block";
-    message.innerText = message;
+    message.innerText = messageShown;
 }
