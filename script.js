@@ -6,18 +6,23 @@ var noOfNotes = document.querySelectorAll(".no-of-notes")
 var availableNotes = [2000, 500, 200, 100, 50, 20, 10, 5, 1]
 buttonCheck.addEventListener("click", function valueValidation(){
     hideMessage();
+    
 
     if(Number(billInput.value) > 0){
         if(Number(cashGiven.value)>=Number(billInput.value)){
             const amountToBeReturned = cashGiven.value - billInput.value;
             changeCalculation(amountToBeReturned); 
         }
-        else{
+        if(Number(cashGiven.value)<=Number(billInput.value)){
             showMessage("Man you gave me less cash than the bill, you plan on washing plates or something??");
-        };
+        }
+        if(Number(cashGiven.value)===Number(billInput.value)){
+            showMessage("There is nothing to return, you gave proper amount");
+        }
+        
     }
     else{
-        showMessage("Invalid Bill Amount");
+        showMessage("Bill amount and cash given should be more than 0");
     }
 });
  
