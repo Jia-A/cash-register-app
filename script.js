@@ -8,6 +8,7 @@ buttonCheck.addEventListener("click", function valueValidation(){
     hideMessage();
     
 
+
     if(Number(billInput.value) > 0){
         if(Number(cashGiven.value)>=Number(billInput.value)){
             const amountToBeReturned = cashGiven.value - billInput.value;
@@ -22,8 +23,10 @@ buttonCheck.addEventListener("click", function valueValidation(){
         
     }
     else{
-        showMessage("Bill amount and cash given should be more than 0");
+        showMessage("Please enter both the fields and they should be more than 0");
     }
+
+
 });
  
 function changeCalculation(returningAmount){
